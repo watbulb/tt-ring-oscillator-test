@@ -1,0 +1,153 @@
+#--------------------------------------------------------------
+# CACE circuit characterization file
+#--------------------------------------------------------------
+
+name:           tt-ring-oscillator-test-hd
+description:    A Dual Ring Oscillator utilizing two different PDK libraries (HD, SC) [HD TEST]
+PDK:            sky130A
+
+cace_format:    5.2
+
+authorship:
+  designer:         Dayton Pidhirney
+  company:          N.A
+  creation_date:    Sep 16, 2024
+  license:          Apache 2.0
+
+paths:
+  root:             ..
+  schematic:        xschem
+  netlist:          netlist
+  documentation:    docs
+
+pins:
+  VDD:
+    description: Positive analog power supply
+    type: power
+    direction: inout
+    Vmin: 1.7
+    Vmax: 1.8
+  VSS:
+    description: Analog ground
+    type: ground
+    direction: inout
+  ENABLE:
+    description: Oscillator enable signal
+    type: digital
+    direction: input
+    Vmin: 1.7
+    Vmax: 1.8
+  OSC_DRIVE_OUT:
+    description: Voltage output
+    type: signal
+    direction: output
+
+default_conditions:
+  ENABLE:
+    description: Enable signal
+    display: enable
+    unit: V
+    typical: 1.8
+  OSC_DRIVE_OUT:
+    description: Oscillator Output Signal
+    display: OSC_DRIVE_OUT
+    unit: V
+    typical: 1.8
+  VDD:
+    description: Analog power supply voltage
+    display: VDD
+    unit: V
+    typical: 1.8
+  VSS:
+    description: Analog ground
+    display: VSS
+    unit: V
+    typical: 0
+  cl:
+    description: Output load capacitance
+    display: CLoad
+    unit: pF
+    maximum: 1
+  corner:
+    description: Process corner
+    display: Corner
+    typical: tt
+    minimum: ss
+    maximum: ff
+  temperature:
+    description: Ambient temperature
+    display: Temp
+    unit: °
+    typical: 27
+  iterations:
+    description: Iterations to run
+    display: Iterations
+    minimum: 1
+    maximum: 1
+    step: linear
+    stepsize: 1
+
+parameters:
+ transient_response:
+    description: Large signal transient response
+    display: Large signal transient response
+    unit: mV
+    status: skip
+    tool:
+      ngspice:
+        template: transient.sch
+        format: ascii
+        suffix: .data
+        variables: [time, ENABLE, VDD, OSC_DRIVE_OUT]
+    spec:
+      ENABLE:
+        display: Enable Signal
+        description: Enable Signal
+        unit: V
+        minimum:
+          value: 1.7
+        typical:
+          value: 1.8
+        maximum:
+          value: 1.8
+      OSC_DRIVE_OUT:
+        display: Oscillator Output
+        description: Oscillator Output
+        unit: V
+        minimum:
+          value: -0.05
+        typical:
+          value: any
+        maximum:
+          value: 1.85
+    plot:
+      transient:
+        xaxis: time
+        yaxis: [OSC_DRIVE_OUT]
+    variables:
+      time:
+        display: Time
+        unit: ns
+      VDD:
+        display: VDD
+        unit: V
+      OSC_DRIVE_OUT:
+        display: OSC_DRIVE_OUT
+        unit: V
+      ENABLE:
+        display: ENABLE
+        unit: V
+    conditions:
+      Tmax:
+        display: Simulation time
+        unit: ns
+        typical: 50
+      temperature:
+        minimum: 0
+        typical: 27
+        maximum: 60
+      corner:
+        typical: tt
+        # minimum: ss
+        # maximum: ff
+
