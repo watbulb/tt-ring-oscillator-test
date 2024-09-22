@@ -174,9 +174,9 @@ text {font-family: Sans-Serif;}
 <text fill="#00ccee"  xml:space="preserve" font-size="6.19702" transform="translate(586.09, 255.458)" >VDD</text>
 <text fill="#00ccee"  xml:space="preserve" font-size="6.19702" transform="translate(588.09, 262.344)" >VSS</text>
 <text fill="#00ccee"  xml:space="preserve" font-size="6.19702" transform="translate(932.275, 338.744)" >OSC_DRIVE_OUT</text>
-<text fill="#cccccc"  xml:space="preserve" font-size="7.51154" transform="translate(157.647, 460.465)" >         /mnt/output/projects/tt-ring-oscillator-test/xschem/tt-ring-oscillator-test-hd.sch</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="7.51154" transform="translate(157.647, 460.465)" >         /mnt/output/projects/tt-ring-oscillator-test-hd/xschem/tt-ring-oscillator-test-hd.sch</text>
 <text fill="#cccccc"  xml:space="preserve" font-size="7.51154" transform="translate(157.647, 449.631)" >Dayton Pidhirney</text>
-<text fill="#cccccc"  xml:space="preserve" font-size="7.51154" transform="translate(355.136, 449.631)" >2024-09-21  20:26:03</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="7.51154" transform="translate(355.136, 449.631)" >2024-09-21  20:54:35</text>
 <text fill="#cccccc"  xml:space="preserve" font-size="18.7789" transform="translate(74.5867, 459.862)" >SCHEM</text>
 <text fill="#cccccc"  xml:space="preserve" font-size="3.75577" transform="translate(63.7528, 304.322)" >A</text>
 <text fill="#cccccc"  xml:space="preserve" font-size="3.75577" transform="translate(86.4834, 304.322)" >Y</text>

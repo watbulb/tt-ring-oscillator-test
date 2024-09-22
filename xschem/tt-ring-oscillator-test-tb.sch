@@ -6,6 +6,7 @@ V {}
 S {}
 E {}
 L 4 0 -120 1180 -120 {}
+L 4 1180 -120 1180 0 {}
 B 2 40 -1120 1210 -660 {flags=graph,unlocked
 
 
@@ -27,7 +28,7 @@ unitx=1
 logx=0
 logy=0
 autoload=1
-rawfile=$netlist_dir/tb_tb.raw
+rawfile=$netlist_dir/tt-ring-oscillator-test-tb.raw
 sim_type=tran
 digital=0
 
@@ -111,7 +112,7 @@ lab=VDD}
 N 490 -440 520 -440 {
 lab=VSS}
 C {devices/title.sym} 160 -40 0 0 {name=title author="Dayton Pidhirney"}
-C {devices/code.sym} 1530 -810 0 0 {name=TT_MODELS
+C {devices/code.sym} 1630 -860 0 0 {name=TT_MODELS
 only_toplevel=false
 format="tcleval( @value )"
 value="
@@ -119,11 +120,11 @@ value="
 .include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
 "
 spice_ignore=false}
-C {devices/launcher.sym} 1720 -780 0 0 {name=h15
+C {devices/launcher.sym} 1820 -830 0 0 {name=h15
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {devices/launcher.sym} 1720 -740 0 0 {name=h17 
+C {devices/launcher.sym} 1820 -790 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
@@ -143,10 +144,11 @@ VENABLE ENABLE 0 dc 1.8
 .option KLU
 .options method=GEAR RELTOL=0.001 ABSTOL=1.0e-9
 .options warn=1
+
 .control
 ** Transient Voltages
 tran 1p 300n uic
-write tb_tb.raw
+write tt-ring-oscillator-test-tb.raw
 plot v(osc_drive_out)
 .endc
 "}

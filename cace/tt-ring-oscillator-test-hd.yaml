@@ -1,24 +1,25 @@
+---
 #--------------------------------------------------------------
 # CACE circuit characterization file
 #--------------------------------------------------------------
 
-name:           tt-ring-oscillator-test-hd
-description:    A Dual Ring Oscillator utilizing two different PDK libraries (HD, SC) [HD TEST]
-PDK:            sky130A
+name: tt-ring-oscillator-test-hd
+description: A Dual Ring Oscillator utilizing two different PDK libraries (HD, SC) [HD TEST]
+PDK: sky130A
 
-cace_format:    5.2
+cace_format: 5.2
 
 authorship:
-  designer:         Dayton Pidhirney
-  company:          N.A
-  creation_date:    Sep 16, 2024
-  license:          Apache 2.0
+  designer: Dayton Pidhirney
+  company: N.A
+  creation_date: Sep 16, 2024
+  license: Apache 2.0
 
 paths:
-  root:             ..
-  schematic:        xschem
-  netlist:          netlist
-  documentation:    docs
+  root: ..
+  schematic: xschem
+  netlist: netlist
+  documentation: docs
 
 pins:
   VDD:
@@ -88,7 +89,7 @@ default_conditions:
     stepsize: 1
 
 parameters:
- transient_response:
+  transient_response:
     description: Large signal transient response
     display: Large signal transient response
     unit: mV
@@ -150,4 +151,3 @@ parameters:
         typical: tt
         # minimum: ss
         # maximum: ff
-

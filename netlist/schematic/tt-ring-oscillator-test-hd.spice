@@ -1,4 +1,4 @@
-** sch_path: /mnt/output/projects/tt-ring-oscillator-test/xschem/tt-ring-oscillator-test-hd.sch
+** sch_path: /mnt/output/projects/tt-ring-oscillator-test-hd/xschem/tt-ring-oscillator-test-hd.sch
 .subckt tt-ring-oscillator-test-hd VDD VSS OSC_DRIVE_OUT ENABLE
 *.PININFO ENABLE:I VDD:B VSS:B OSC_DRIVE_OUT:O
 x1 net29 VSS VSS VDD VDD net1 sky130_fd_sc_hd__inv_1
